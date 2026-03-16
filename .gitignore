@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Generated data artifacts
+data/raw/*.csv
+data/processed/*.csv
+
+# Generated model artifacts
+models/*.joblib
+models/*.pkl
+
+# Generated reports
+reports/*.json
+
+# Legacy single-model artifacts (if they exist)
+data/raw/synthetic_claims.csv
+data/processed/train.csv
+data/processed/test.csv
+models/fraud_model.joblib
+reports/train_metrics.json
+reports/evaluation_metrics.json
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+!reports/.gitkeep
