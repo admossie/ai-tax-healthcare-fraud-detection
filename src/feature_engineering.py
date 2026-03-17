@@ -14,7 +14,6 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +50,8 @@ def build_tax_features(df: pd.DataFrame) -> pd.DataFrame:
 
 def split_tax(df: pd.DataFrame, test_size: float = 0.20,
               random_state: int = 42) -> tuple[Path, Path]:
+    from sklearn.model_selection import train_test_split
+
     PROC_DIR.mkdir(parents=True, exist_ok=True)
     train_df, test_df = train_test_split(
         df, test_size=test_size, random_state=random_state, stratify=df["is_fraud"]
@@ -85,6 +86,8 @@ def build_healthcare_features(df: pd.DataFrame) -> pd.DataFrame:
 
 def split_healthcare(df: pd.DataFrame, test_size: float = 0.20,
                      random_state: int = 42) -> tuple[Path, Path]:
+    from sklearn.model_selection import train_test_split
+
     PROC_DIR.mkdir(parents=True, exist_ok=True)
     train_df, test_df = train_test_split(
         df, test_size=test_size, random_state=random_state, stratify=df["is_fraud"]
